@@ -1,0 +1,73 @@
+// SASS for Aside 
+
+//Aside 
+aside{
+	width: 250px;
+	height: 700px;
+	position: absolute;
+	left: 0;
+	height: 100%;
+	
+	@media screen and (max-width: 768px){
+		background: #6a7684;
+		position: fixed;
+		top: 0;
+	
+	}
+}
+
+//hamburger
+a.hamburger{
+	display: none;
+	@media screen and (max-width:768px){
+		display: inherit;
+	}
+}
+
+//Main Menu
+ul.menu{
+	margin-left: 40px;
+	font-size: 1.1em;
+	
+	li{
+		padding: .5em 0;
+		a{
+		color: $font;
+		text-decoration: none;
+		
+			@media screen and (max-width: 768px){
+				color: white;
+			}
+		}
+	}
+}
+
+
+//Slide out 
+.slide{
+	@media screen and (max-width: 768px){
+		@include transform(translate(250px,0));
+		}
+}
+
+div.user-info{
+	padding: 1em 0;
+	margin-left: 40px;
+	line-height: 40px;
+
+	img{
+		display: inline-block;
+		vertical-align: middle;
+			}
+	h2{
+		padding: 0 1em;
+		display: inline-block;
+
+		@media screen and (max-width: 768px){
+				color: white;
+			}
+	}
+
+	
+}
+

@@ -1,0 +1,100 @@
+//Sass for posts 
+
+
+article.event{
+	margin: 0 auto 4em;
+	width: 100%;
+
+	//Event image
+	img{
+		width: 100%;
+		height: auto;
+		max-width: 500px;
+
+		@media screen and (max-width: 768px){
+			max-width: 100%;
+		}
+
+	}
+	
+	
+	//event copy
+	p{
+		font-weight: 400;
+		line-height: 1.5em;
+		margin: 1em 0;
+
+		@media screen and (max-width: 768px){
+			margin: 1em 6%;
+		}
+	}
+	
+	//Profile pic and event info
+	header{
+		height: 65px;
+		padding: 1em 0;
+		line-height: 65px;
+		
+		//Profile Pic
+		img{
+			width: 65px;
+			height: 65px;
+			float: left;
+			border-radius: 100px;
+			
+		}
+
+		@media screen and (max-width: 768px){
+			padding: 1em 6%;
+		}
+	}
+
+	@media screen and (max-width: 768px){
+			max-width: 100%;
+		}
+}
+
+//Event Info
+div.event-info{
+	display: inline-block;
+	line-height: 20px;
+	vertical-align: middle;
+	padding: 0 0 0 1em;
+	
+	//Event title
+	h2{
+		font-weight: 600;
+	}
+	
+	//Event poster 
+	h3{
+		font-weight: 400;
+	}
+}
+
+/* 
+article.user-post{
+	max-width: 500px;
+	margin: 0 auto;
+
+	//Poster's image
+	img.post-user-pic{
+		width: 65px;
+		height: 65px;
+		border-radius: 35px;
+	}
+
+	//Featured image
+	img.post-image{
+		width: 100%;
+	}
+
+	@media screen and (max-width: 768px){
+		width: 100%;
+		max-width: 100%;
+	}
+
+
+}
+
+*/

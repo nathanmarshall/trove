@@ -1,0 +1,71 @@
+//SASS for Content 
+
+html{
+	height: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+body{
+	height: 100%;
+	background: $body-background;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+h1{
+	font-size: 1.1em;
+}
+
+h2{
+	font-size: 1.0em;
+}
+
+h3{
+	font-size: .9em;
+}
+
+
+h1, h2, h3, h4,p{
+	color: $font;
+
+	a{
+		color: $links;
+	}
+}
+
+a{
+	text-decoration: none;
+	color: $links;
+}
+
+
+//Page Wrapper 
+div.wrapper{
+	margin: 0 auto; 
+	width: 100%;
+	max-width: 960px;
+	position: relative;
+	height: 100%;
+	
+	@media screen and (max-width: 768px){
+			@include transition(.3s);
+
+
+	}
+	
+}
+
+
+//Content Wrapper 
+div.content-wrapper{
+	margin-left: 250px;
+	min-height: 100%;
+	
+	@media screen and (max-width: 768px){
+		margin-left: 0;
+		position: absolute;
+		width: 100%;
+		@include transition(.3s);
+		top: 80px;
+		background: $body-background;
+	}
+}

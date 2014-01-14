@@ -1,0 +1,28 @@
+[11-Dec-2013 18:24:19 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2005] Unknown MySQL server host 'nathanmc.ca' (0)' in /home3/nathanmc/public_html/trove/includes/mysql.php:78
+Stack trace:
+#0 /home3/nathanmc/public_html/trove/includes/mysql.php(78): PDO->__construct('mysql:host=nath...', 'nathanmc', 'Gizmodo@443737', Array)
+#1 /home3/nathanmc/public_html/trove/includes/mysql.php(64): MySQL->connectToDb()
+#2 /home3/nathanmc/public_html/trove/login.php(27): MySQL->MySQL('nathanmc.ca', 'nathanmc', 'Gizmodo@443737', 'nathanmc_trove')
+#3 {main}
+  thrown in /home3/nathanmc/public_html/trove/includes/mysql.php on line 78
+[11-Dec-2013 18:24:41 America/Denver] PHP Notice:  Undefined variable: dbName in /home3/nathanmc/public_html/trove/index.php on line 38
+[11-Dec-2013 18:25:38 America/Denver] PHP Notice:  Undefined variable: dbName in /home3/nathanmc/public_html/trove/index.php on line 38
+[11-Dec-2013 18:26:58 America/Denver] PHP Notice:  Undefined variable: dbName in /home3/nathanmc/public_html/trove/index.php on line 38
+[11-Dec-2013 18:27:08 America/Denver] PHP Notice:  Undefined variable: dbName in /home3/nathanmc/public_html/trove/index.php on line 38
+[11-Dec-2013 18:27:44 America/Denver] PHP Notice:  Undefined variable: dbName in /home3/nathanmc/public_html/trove/index.php on line 38
+[11-Dec-2013 18:27:50 America/Denver] PHP Notice:  Undefined variable: dbName in /home3/nathanmc/public_html/trove/index.php on line 38
+[11-Dec-2013 18:34:38 America/Denver] PHP Warning:  mkdir(): No such file or directory in /home3/nathanmc/public_html/trove/register.php on line 89
+[11-Dec-2013 18:34:38 America/Denver] PHP Warning:  move_uploaded_file(/home3/nathanmc/public_html/trove/trove/images/userimages/24/image1386812078.jpg): failed to open stream: No such file or directory in /home3/nathanmc/public_html/trove/register.php on line 99
+[11-Dec-2013 18:34:38 America/Denver] PHP Warning:  move_uploaded_file(): Unable to move '/var/tmp/phpGgI6OH' to '/home3/nathanmc/public_html/trove/trove/images/userimages/24/image1386812078.jpg' in /home3/nathanmc/public_html/trove/register.php on line 99
+[11-Dec-2013 18:34:40 America/Denver] PHP Warning:  mkdir(): No such file or directory in /home3/nathanmc/public_html/trove/register.php on line 89
+[11-Dec-2013 18:34:40 America/Denver] PHP Warning:  move_uploaded_file(/home3/nathanmc/public_html/trove/trove/images/userimages/25/image1386812080.jpg): failed to open stream: No such file or directory in /home3/nathanmc/public_html/trove/register.php on line 99
+[11-Dec-2013 18:34:40 America/Denver] PHP Warning:  move_uploaded_file(): Unable to move '/var/tmp/phpbQC0du' to '/home3/nathanmc/public_html/trove/trove/images/userimages/25/image1386812080.jpg' in /home3/nathanmc/public_html/trove/register.php on line 99
+[11-Dec-2013 18:38:39 America/Denver] PHP Warning:  mkdir(): No such file or directory in /home3/nathanmc/public_html/trove/register.php on line 89
+[11-Dec-2013 18:38:39 America/Denver] PHP Warning:  move_uploaded_file(/home3/nathanmc/public_html/trove/trove/images/userimages/29/image1386812319.jpg): failed to open stream: No such file or directory in /home3/nathanmc/public_html/trove/register.php on line 99
+[11-Dec-2013 18:38:39 America/Denver] PHP Warning:  move_uploaded_file(): Unable to move '/var/tmp/phpnLJztP' to '/home3/nathanmc/public_html/trove/trove/images/userimages/29/image1386812319.jpg' in /home3/nathanmc/public_html/trove/register.php on line 99
+[11-Dec-2013 18:39:01 America/Denver] PHP Warning:  mkdir(): No such file or directory in /home3/nathanmc/public_html/trove/add.php on line 43
+[11-Dec-2013 18:39:01 America/Denver] PHP Warning:  move_uploaded_file(/home3/nathanmc/public_html/trove/trove/images/postimages/27/image1386812341.jpg): failed to open stream: No such file or directory in /home3/nathanmc/public_html/trove/add.php on line 54
+[11-Dec-2013 18:39:01 America/Denver] PHP Warning:  move_uploaded_file(): Unable to move '/var/tmp/phpfbAHFr' to '/home3/nathanmc/public_html/trove/trove/images/postimages/27/image1386812341.jpg' in /home3/nathanmc/public_html/trove/add.php on line 54
+[13-Dec-2013 00:08:49 America/Denver] PHP Warning:  mkdir(): No such file or directory in /home3/nathanmc/public_html/trove/add.php on line 43
+[13-Dec-2013 00:08:49 America/Denver] PHP Warning:  move_uploaded_file(/home3/nathanmc/public_html/images/postimages/32/Screen_Shot_2013-12-12_at_11.03.57_PM1386918529.png): failed to open stream: No such file or directory in /home3/nathanmc/public_html/trove/add.php on line 54
+[13-Dec-2013 00:08:49 America/Denver] PHP Warning:  move_uploaded_file(): Unable to move '/var/tmp/phpp208Jc' to '/home3/nathanmc/public_html/images/postimages/32/Screen_Shot_2013-12-12_at_11.03.57_PM1386918529.png' in /home3/nathanmc/public_html/trove/add.php on line 54

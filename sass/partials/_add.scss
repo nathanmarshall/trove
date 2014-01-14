@@ -1,0 +1,106 @@
+// SASS for add form overlay  
+
+section.overlay{
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background: rgba(52,54,58,0.97);
+	z-index: 9998;
+	overflow-y: scroll;
+
+	 @include transition(.2s);
+
+	header{
+		line-height: 80px;
+		height: 80px;
+
+		h1{
+			color: white;
+			text-align: center;
+			vertical-align: middle;
+		}
+
+	}
+}
+
+div.add-wrapper{
+	width: 80%;
+	max-width: 960px;
+	margin: 0 auto;
+	height: 100%;
+	line-height: 100%;
+}
+
+.hide{
+	display:none;
+}
+
+form.add{
+	width: 100%;
+	padding: 2em 0;
+
+	input#title, textarea#text{
+		width: 100%;
+		height: 70px;
+		border:none;
+		border-bottom: 1px solid rgb(127, 133, 137);
+		background: none;
+		margin: 20px 0;
+		outline: none;
+		font-size: 24px;
+		font-weight: 300 !important;
+		 resize: none; 
+		color: white;
+	}
+
+	input#title:focus, textarea#text:focus{
+		outline: none;
+		color: white;
+	}
+
+	input#picture{
+		display: block;
+		width: 60px;
+		height: 60px;
+		margin: 0 auto;
+		cursor: pointer;
+		background: url(../images/ui/photo.png) center no-repeat;
+		outline: none;
+		color: rgba(0, 0, 0, 0);
+		text-indent: -999px;
+	}
+
+	input.privacy{
+		margin-right: 2em;
+
+
+	}
+
+	input.submit{
+		padding: 1em 3em;
+		margin-top: 4em !important;
+		display: block;
+		margin: 0 auto;
+		color: white;
+		background: #5dbb55;
+		border:none;
+		border-radius: 5px;
+
+	}
+
+	span.privacy{
+		color: rgb(127, 133, 137);
+		padding: 1em 2em 0 .5em;
+		font-size: 24px;
+		vertical-align: middle;
+
+		@media screen and (max-width: 768px){
+			font-size: 1em;
+		}
+	}
+
+
+	
+}

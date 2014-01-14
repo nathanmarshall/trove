@@ -1,0 +1,25 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+
+// Basics 
+@import "compass/reset";
+@import "../bourbon/bourbon";
+@import "partials/colors";
+
+
+//Partials
+@import "partials/header";
+@import "partials/basics";
+@import "partials/events";
+@import "partials/aside";
+@import "partials/add";
+@import "partials/social";
+@import "partials/register";
+@import "partials/posts";
+@import "partials/discover";
+@import "partials/journal";
+//Icons
+@import "../icomoon/style.css";
