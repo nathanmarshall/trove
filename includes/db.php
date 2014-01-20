@@ -1,7 +1,7 @@
 <?php
 $dbconfig['host'] = 'localhost';
-$dbconfig['database'] = 'nathanmc_trove';
-$dbconfig['user'] = 'nathanmc';
-$dbconfig['password'] = 'Gizmodo@443737';
+$dbconfig['database'] = 'trove';
+$dbconfig['user'] = 'root';
+$dbconfig['password'] = 'root';
 define('URL_ROOT', '/'); 
 ?>

@@ -127,7 +127,7 @@ require_once 'includes/db.php';
 			echo '</div>';
 			echo "</header>";
 			if($data['postPhoto'] != ''){
-				echo '<img class="post-image" src="images/postimages/'.$data['userId'].'/'.$data['postPhoto'].'">';
+				echo '<div class="post-image" style=" background-image: url(images/postimages/'.$data['userId'].'/'.$data['postPhoto'].')"></div>';
 			}
 			echo '<p>Posted: '.substr($data['postDate'],0,10).'<p>';
 			echo '<p>'.$data['postText'].'<p>';
@@ -173,18 +173,11 @@ require_once 'includes/db.php';
 			
 		}
 		//End of a Post
-
-
-
 	?>
 </div>
 <!-- End Content Wrapper -->
-
-
 </div>
 <!-- End Wrapper -->
-
-
 <!-- Include Footer -->
 <?php 
 }

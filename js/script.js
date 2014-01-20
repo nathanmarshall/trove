@@ -18,12 +18,17 @@ $(function(){
 
 
 	//Slide out menu 
-	$('.hamburger').click(function(){
-		
+	$('.hamburger').click(function(e){
+    e.preventDefault();
 		$('.content-wrapper').toggleClass('slide');
-		$('header.main-header').toggleClass('slide');
+    $('.logo').toggleClass('slide');
 	});
-	
-	
-	
+
+  $('.content-wrapper').click(function(e){
+    e.preventDefault();
+    $('.content-wrapper').removeClass('slide');
+    $('.logo').removeClass('slide');
+  });
+
+
 });

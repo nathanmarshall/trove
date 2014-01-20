@@ -2,14 +2,14 @@
 	font-family: 'icomoon';
 	src:url('fonts/icomoon.eot');
 	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.ttf') format('truetype'),
 		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
 		url('fonts/icomoon.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-[class*="icon-"] {
+[class^="icon-"], [class*=" icon-"] {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -23,9 +23,18 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-diamond:before {
+.icon-compass:before {
 	content: "\e600";
 }
-.icon-chat:before {
+.icon-diamond:before {
 	content: "\e601";
+}
+.icon-logout:before {
+	content: "\e602";
+}
+.icon-house:before {
+	content: "\e603";
+}
+.icon-book:before {
+	content: "\e604";
 }

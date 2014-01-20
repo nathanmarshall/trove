@@ -4,22 +4,24 @@
 } else {
 
  ?>
-<!-- Include Head -->
-<?php include_once('head.php'); ?>
+	<!-- Include Head -->
+	<?php include_once('head.php'); ?>
 
 	<!-- Add form -->
 	<?php require_once('add_form.php'); ?>
 
-<!-- Wrapper Start -->
-<div class="wrapper">
+	<!-- Wrapper Start -->
+	<div class="wrapper">
 	<!-- Inlude Header -->
-	<?php include_once('header.php'); ?>
-	<!-- Include Aside -->
 	<?php include_once('aside.php'); ?>
+
+			<?php include_once('header.php'); ?>
+		<!-- Include Aside -->
 
 
 	<!-- Content Wrapper -->
 	<div class="content-wrapper">
+		
 
 		<?php
 
@@ -35,7 +37,7 @@
 		$link = mysql_connect($dbconfig['host'], $dbconfig['user'], $dbconfig['password']) or die('Connection failed - '.mysql_error());
 
 			//connection is OK, select the DB to work with
-		mysql_query("USE nathanmc_trove") or die("$dbName is not found = ".mysql_error());
+		mysql_query("USE trove") or die("$dbName is not found = ".mysql_error());
 
 		$rsselect = mysql_query($selq)or die(mysql_error());
 
@@ -73,7 +75,7 @@
 			echo '</div>';
 			echo "</header>";
 			if($data['postPhoto'] != ''){
-				echo '<img class="post-image" src="images/postimages/'.$data['userId'].'/'.$data['postPhoto'].'">';
+				echo '<div class="post-image" style=" background-image: url(images/postimages/'.$data['userId'].'/'.$data['postPhoto'].')"></div>';
 			}
 			echo '<p>Posted: '.substr($data['postDate'],0,10).'<p>';
 			echo '<p>'.$data['postText'].'<p>';
@@ -135,15 +137,3 @@
 }
 //End logged_in_user check
 include_once('footer.php'); ?>
-
-
-
-<!-- Start Event 
-			<article class="event">
-				
-			<img src="images/event.jpg" >
-			<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.</p>
-			
-			
-			</article>
-			 End Event -->

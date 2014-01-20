@@ -7,12 +7,11 @@ html{
 
 body{
 	height: 100%;
-	background: $body-background;
-	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-family: 'Lato', Helvetica, sans-serif;
 }
 
 h1{
-	font-size: 1.1em;
+	font-size: 36px;
 }
 
 h2{
@@ -42,30 +41,21 @@ a{
 div.wrapper{
 	margin: 0 auto; 
 	width: 100%;
-	max-width: 960px;
-	position: relative;
+	position: absolute;
+	z-index: 9999;
 	height: 100%;
-	
-	@media screen and (max-width: 768px){
-			@include transition(.3s);
-
-
-	}
-	
+	@include transition(.2s);
 }
 
 
 //Content Wrapper 
 div.content-wrapper{
+	position: absolute;
 	margin-left: 250px;
 	min-height: 100%;
-	
-	@media screen and (max-width: 768px){
-		margin-left: 0;
-		position: absolute;
-		width: 100%;
-		@include transition(.3s);
-		top: 80px;
-		background: $body-background;
-	}
+	margin-left: 0;
+	width: 100%;
+	background: white;
+	@include transition(.2s);
 }
+	
