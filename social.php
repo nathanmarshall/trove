@@ -29,44 +29,6 @@
 
 	}
 
-
-	//For geming 
-	else if(isset($_POST['gem'])){
-		
-		if($_GET['gem'] == 'yes'){
-
-		$userid = $_SESSION['logged_in_user'];
-		$postid = $_GET['post']; 
-
-		$sql = "INSERT INTO gems (gemPostId, gemUserId) VALUES (?,?)";
-						
-		$stm = $db->dbConn->prepare($sql);
-
-      	$stm->execute(array($postid, 
-      						$userid
-      						)); 
-    header('Location: '.$_SERVER['HTTP_REFERER']);
-          exit();
-
-    } else {
-
-      $userid = $_SESSION['logged_in_user'];
-    $postid = $_GET['post']; 
-
-    $sql = "DELETE FROM gems WHERE gemPostId = ? AND GemUserId = ? ";
-            
-    $stm = $db->dbConn->prepare($sql);
-
-        $stm->execute(array($postid, 
-                  $userid
-                  )); 
-       header('Location: '.$_SERVER['HTTP_REFERER']);
-          exit();
-
-    }
-	} 
-
-
 	//For following
 	else if(isset($_GET['follow'])){
 
@@ -105,8 +67,4 @@
       }
 
         }
-				
-
-
-
 ?>
