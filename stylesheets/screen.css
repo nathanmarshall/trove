@@ -112,39 +112,41 @@ html {
 body {
   height: 100%;
   font-family: 'Lato', Helvetica, sans-serif;
+  background: #181818;
+  color: white;
 }
 
-/* line 13, ../sass/partials/_basics.scss */
+/* line 15, ../sass/partials/_basics.scss */
 h1 {
   font-size: 36px;
 }
 
-/* line 17, ../sass/partials/_basics.scss */
+/* line 19, ../sass/partials/_basics.scss */
 h2 {
   font-size: 1.0em;
 }
 
-/* line 21, ../sass/partials/_basics.scss */
+/* line 23, ../sass/partials/_basics.scss */
 h3 {
   font-size: .9em;
 }
 
-/* line 26, ../sass/partials/_basics.scss */
+/* line 28, ../sass/partials/_basics.scss */
 h1, h2, h3, h4, p {
-  color: #333332;
+  color: white;
 }
-/* line 29, ../sass/partials/_basics.scss */
+/* line 31, ../sass/partials/_basics.scss */
 h1 a, h2 a, h3 a, h4 a, p a {
   color: #51606d;
 }
 
-/* line 34, ../sass/partials/_basics.scss */
+/* line 36, ../sass/partials/_basics.scss */
 a {
   text-decoration: none;
   color: #51606d;
 }
 
-/* line 41, ../sass/partials/_basics.scss */
+/* line 43, ../sass/partials/_basics.scss */
 div.wrapper {
   margin: 0 auto;
   width: 100%;
@@ -156,14 +158,14 @@ div.wrapper {
   transition: 0.2s;
 }
 
-/* line 52, ../sass/partials/_basics.scss */
+/* line 54, ../sass/partials/_basics.scss */
 div.content-wrapper {
   position: absolute;
   margin-left: 250px;
   min-height: 100%;
   margin-left: 0;
   width: 100%;
-  background: white;
+  background: #181818;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   transition: 0.2s;
@@ -378,7 +380,7 @@ button.gem-button {
   border-radius: 5px;
   padding: .1em  .35em;
   background: none;
-  color: #333332;
+  color: white;
   text-decoration: none;
   margin-right: 1em;
   -webkit-transition: 0.2s;
@@ -411,7 +413,7 @@ input.comment-field {
 
 /* line 42, ../sass/partials/_social.scss */
 form.gem {
-  color: #333332;
+  color: white;
   font-weight: 600;
 }
 @media screen and (max-width: 768px) {
@@ -456,7 +458,7 @@ p.user-comment span {
 }
 /* line 23, ../sass/partials/_register.scss */
 .form-container h1 {
-  color: #333332;
+  color: white;
   margin-bottom: 30px;
 }
 /* line 28, ../sass/partials/_register.scss */
@@ -482,7 +484,7 @@ p.user-comment span {
   border: 1px solid #d5d5d5;
   border-radius: 10px;
   width: 50%;
-  color: #333332;
+  color: white;
   clear: right;
   padding-top: 10px;
 }
@@ -496,54 +498,70 @@ p.user-comment span {
 /* line 64, ../sass/partials/_register.scss */
 .form-container .return a {
   text-decoration: none;
-  color: #333332;
+  color: white;
 }
 /* line 69, ../sass/partials/_register.scss */
 .form-container .return a:visited {
-  color: #333332;
+  color: white;
 }
 
 /* line 4, ../sass/partials/_posts.scss */
 article.event {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 1280px;
   width: 100%;
+  background: #0C0C0C;
 }
-/* line 10, ../sass/partials/_posts.scss */
+/* line 11, ../sass/partials/_posts.scss */
 article.event div.post-image {
   width: 100%;
-  height: 400px;
+  height: 600px;
   background: center center no-repeat;
   background-color: teal;
   background-size: cover !important;
 }
-/* line 21, ../sass/partials/_posts.scss */
-article.event p {
-  font-weight: 400;
+/* line 20, ../sass/partials/_posts.scss */
+article.event .posts-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+/* line 25, ../sass/partials/_posts.scss */
+article.event .posts-inner .post-text {
+  font-style: italic;
+  font-weight: 600;
   line-height: 1.5em;
-  margin: 1em 0;
+  padding: 6em 0;
+  font-size: 2em;
+}
+/* line 32, ../sass/partials/_posts.scss */
+article.event .posts-inner .post-text:before {
+  content: "\201C";
+}
+/* line 36, ../sass/partials/_posts.scss */
+article.event .posts-inner .post-text:after {
+  content: "\201D";
 }
 @media screen and (max-width: 768px) {
-  /* line 21, ../sass/partials/_posts.scss */
-  article.event p {
+  /* line 25, ../sass/partials/_posts.scss */
+  article.event .posts-inner .post-text {
     margin: 1em 6%;
   }
 }
-/* line 32, ../sass/partials/_posts.scss */
-article.event header {
-  height: 65px;
-  padding: 1em 0;
-  line-height: 65px;
-}
-/* line 38, ../sass/partials/_posts.scss */
-article.event header img {
+/* line 47, ../sass/partials/_posts.scss */
+article.event img.post-user-pic {
   width: 65px;
   height: 65px;
   float: left;
   border-radius: 100px;
 }
+/* line 56, ../sass/partials/_posts.scss */
+article.event header {
+  height: 65px;
+  padding: 1em 0;
+  line-height: 65px;
+}
 @media screen and (max-width: 768px) {
-  /* line 32, ../sass/partials/_posts.scss */
+  /* line 56, ../sass/partials/_posts.scss */
   article.event header {
     padding: 1em 6%;
   }
@@ -555,18 +573,18 @@ article.event header img {
   }
 }
 
-/* line 57, ../sass/partials/_posts.scss */
+/* line 73, ../sass/partials/_posts.scss */
 div.event-info {
   display: inline-block;
   line-height: 20px;
   vertical-align: middle;
   padding: 0 0 0 1em;
 }
-/* line 64, ../sass/partials/_posts.scss */
+/* line 80, ../sass/partials/_posts.scss */
 div.event-info h2 {
   font-weight: 600;
 }
-/* line 69, ../sass/partials/_posts.scss */
+/* line 85, ../sass/partials/_posts.scss */
 div.event-info h3 {
   font-weight: 400;
 }
@@ -643,7 +661,7 @@ div.user-profile a {
   border-radius: 999em;
   padding: .1em  .35em;
   background: none;
-  color: #333332;
+  color: white;
   text-decoration: none;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;

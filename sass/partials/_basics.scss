@@ -8,6 +8,8 @@ html{
 body{
 	height: 100%;
 	font-family: 'Lato', Helvetica, sans-serif;
+	background: #181818;
+	color: white;
 }
 
 h1{
@@ -55,7 +57,7 @@ div.content-wrapper{
 	min-height: 100%;
 	margin-left: 0;
 	width: 100%;
-	background: white;
+	background: #181818;
 	@include transition(.2s);
 }
 	
