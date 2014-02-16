@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot');
-	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.ttf') format('truetype'),
-		url('fonts/icomoon.svg#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?mmsaqn');
+	src:url('fonts/icomoon.eot?#iefixmmsaqn') format('embedded-opentype'),
+		url('fonts/icomoon.woff?mmsaqn') format('woff'),
+		url('fonts/icomoon.ttf?mmsaqn') format('truetype'),
+		url('fonts/icomoon.svg?mmsaqn#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -26,6 +26,12 @@
 .icon-compass:before {
 	content: "\e600";
 }
+.icon-comment:before {
+	content: "\e605";
+}
+.icon-bubble:before {
+	content: "\e606";
+}
 .icon-diamond:before {
 	content: "\e601";
 }
@@ -37,4 +43,10 @@
 }
 .icon-book:before {
 	content: "\e604";
+}
+.icon-comment2:before {
+	content: "\e607";
+}
+.icon-comment3:before {
+	content: "\e608";
 }

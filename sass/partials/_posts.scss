@@ -2,6 +2,7 @@
 
 
 article.event{
+	position: relative;
 	margin: 0 auto;
 	max-width: 1280px;
 	width: 100%;
@@ -9,11 +10,38 @@ article.event{
 
 	//Event image
 	div.post-image {
+		position: relative;
 		width: 100%;
 		height: 600px;
 		background: center center no-repeat;
 		background-color: teal; 
 		background-size: cover !important;
+	}
+
+	.ls-social {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+	
+		li {
+			padding: .5em;
+			
+			[class^="btn"] {
+			background: #111;
+			border-radius: 5px;
+			border: none;
+			@include transition(.3s);
+			@include size(35px);
+			
+			&:hover {
+				background: #E95846;
+			}
+			
+			span {
+				color: white;
+				}
+			}
+		}
 	}
 
 	
@@ -24,10 +52,10 @@ article.event{
 	//event copy
 		.post-text {
 			font-style: italic;
-			font-weight: 600;
+			font-weight: 500;
 			line-height: 1.5em;
 			padding: 6em 0;
-			font-size: 2em;
+			font-size: 1.5em;
 			
 			&:before {
 				content: "\201C";
@@ -54,9 +82,12 @@ article.event{
 	
 	//Profile pic and event info
 	header{
+		position: absolute;
+		z-index: 9999;
 		height: 65px;
-		padding: 1em 0;
 		line-height: 65px;
+		left: 10px;
+		top: 10px;
 		
 
 		@media screen and (max-width: 768px){

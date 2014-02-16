@@ -34,23 +34,27 @@ function post($userid,$db,$dbconfig,$sql) {
 
       //Start of a post
       echo '<article class="event">';
+      echo "<header>";
+      echo '<a href="journal.php?user='.$data['userId'].'"><img class="post-user-pic" src="images/userimages/'.$data['userId'].'/'.$data['userPic'].'"></a>';
+      echo '<div class="event-info">';
+      echo '<h2>'.$data['postTitle'].'<h2>';
+      echo '<a href="journal.php?user='.$data['userId'].'"><h3>by '.$data['userHandle'].'<h3></a>';        echo '</div>';
+      echo "</header>";
+
       if($data['postPhoto'] != ''){
         echo '<div class="post-image" style=" background-image: url(images/postimages/'.$data['userId'].'/'.$data['postPhoto'].')">';
-        echo "<header>";
-        echo '<a href="journal.php?user='.$data['userId'].'"><img class="post-user-pic" src="images/userimages/'.$data['userId'].'/'.$data['userPic'].'"></a>';
-        echo '<div class="event-info">';
-        echo '<h2>'.$data['postTitle'].'<h2>';
-        echo '<a href="journal.php?user='.$data['userId'].'"><h3>by '.$data['userHandle'].'<h3></a>';
-        echo '</div>';
-        echo "</header>";
+        echo '<ul class="ls-social"><li><button class="btn-comment"><span class="icon-comment3"></span></button></li><li><button class="btn-gem"><span class="icon-diamond"></span></button></li></ul>';
         echo '</div>';
       }
+
       echo '<div class="posts-inner">';
+      
       /* echo '<p>Posted: '.substr($data['postDate'],0,10).'<p>'; */
-      echo '<p class="post-text">'.$data['postText'].'<p>';
-      echo '</div>';
-
-
+      if ($data['postText'] != '') {
+        echo '<p class="post-text">'.$data['postText'].'<p>';
+        echo '</div>';
+      }
+     
         //Gems 
         /* 
       $logged_in_user = $_SESSION['logged_in_user'];

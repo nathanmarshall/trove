@@ -507,61 +507,95 @@ p.user-comment span {
 
 /* line 4, ../sass/partials/_posts.scss */
 article.event {
+  position: relative;
   margin: 0 auto;
   max-width: 1280px;
   width: 100%;
   background: #0C0C0C;
 }
-/* line 11, ../sass/partials/_posts.scss */
+/* line 12, ../sass/partials/_posts.scss */
 article.event div.post-image {
+  position: relative;
   width: 100%;
   height: 600px;
   background: center center no-repeat;
   background-color: teal;
   background-size: cover !important;
 }
-/* line 20, ../sass/partials/_posts.scss */
+/* line 21, ../sass/partials/_posts.scss */
+article.event .ls-social {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+/* line 26, ../sass/partials/_posts.scss */
+article.event .ls-social li {
+  padding: .5em;
+}
+/* line 29, ../sass/partials/_posts.scss */
+article.event .ls-social li [class^="btn"] {
+  background: #111;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+  width: 35px;
+  height: 35px;
+}
+/* line 36, ../sass/partials/_posts.scss */
+article.event .ls-social li [class^="btn"]:hover {
+  background: #E95846;
+}
+/* line 40, ../sass/partials/_posts.scss */
+article.event .ls-social li [class^="btn"] span {
+  color: white;
+}
+/* line 48, ../sass/partials/_posts.scss */
 article.event .posts-inner {
   max-width: 640px;
   margin: 0 auto;
 }
-/* line 25, ../sass/partials/_posts.scss */
+/* line 53, ../sass/partials/_posts.scss */
 article.event .posts-inner .post-text {
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.5em;
   padding: 6em 0;
-  font-size: 2em;
+  font-size: 1.5em;
 }
-/* line 32, ../sass/partials/_posts.scss */
+/* line 60, ../sass/partials/_posts.scss */
 article.event .posts-inner .post-text:before {
   content: "\201C";
 }
-/* line 36, ../sass/partials/_posts.scss */
+/* line 64, ../sass/partials/_posts.scss */
 article.event .posts-inner .post-text:after {
   content: "\201D";
 }
 @media screen and (max-width: 768px) {
-  /* line 25, ../sass/partials/_posts.scss */
+  /* line 53, ../sass/partials/_posts.scss */
   article.event .posts-inner .post-text {
     margin: 1em 6%;
   }
 }
-/* line 47, ../sass/partials/_posts.scss */
+/* line 75, ../sass/partials/_posts.scss */
 article.event img.post-user-pic {
   width: 65px;
   height: 65px;
   float: left;
   border-radius: 100px;
 }
-/* line 56, ../sass/partials/_posts.scss */
+/* line 84, ../sass/partials/_posts.scss */
 article.event header {
+  position: absolute;
+  z-index: 9999;
   height: 65px;
-  padding: 1em 0;
   line-height: 65px;
+  left: 10px;
+  top: 10px;
 }
 @media screen and (max-width: 768px) {
-  /* line 56, ../sass/partials/_posts.scss */
+  /* line 84, ../sass/partials/_posts.scss */
   article.event header {
     padding: 1em 6%;
   }
@@ -573,18 +607,18 @@ article.event header {
   }
 }
 
-/* line 73, ../sass/partials/_posts.scss */
+/* line 104, ../sass/partials/_posts.scss */
 div.event-info {
   display: inline-block;
   line-height: 20px;
   vertical-align: middle;
   padding: 0 0 0 1em;
 }
-/* line 80, ../sass/partials/_posts.scss */
+/* line 111, ../sass/partials/_posts.scss */
 div.event-info h2 {
   font-weight: 600;
 }
-/* line 85, ../sass/partials/_posts.scss */
+/* line 116, ../sass/partials/_posts.scss */
 div.event-info h3 {
   font-weight: 400;
 }
