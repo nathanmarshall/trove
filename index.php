@@ -19,13 +19,12 @@
 	<div class="wrapper">
 	<!-- Inlude Header -->
 	<?php require_once('aside.php'); ?>
-	<?php include_once('header.php'); ?>
 	<!-- Include Aside -->
 
 
 	<!-- Content Wrapper -->
 	<div class="content-wrapper">
-
+	<?php include_once('header.php'); ?>
 		<?php
 
 		$currentUser = $_SESSION['logged_in_user'];
@@ -48,7 +47,6 @@
 		//List of events 
 		post($userid,$db,$dbconfig,$sql);
 	?>	
-
 </div>
 <!-- End Content Wrapper -->
 

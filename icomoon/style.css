@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?mmsaqn');
-	src:url('fonts/icomoon.eot?#iefixmmsaqn') format('embedded-opentype'),
-		url('fonts/icomoon.woff?mmsaqn') format('woff'),
-		url('fonts/icomoon.ttf?mmsaqn') format('truetype'),
-		url('fonts/icomoon.svg?mmsaqn#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?-jrnpk6');
+	src:url('fonts/icomoon.eot?#iefix-jrnpk6') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-jrnpk6') format('woff'),
+		url('fonts/icomoon.ttf?-jrnpk6') format('truetype'),
+		url('fonts/icomoon.svg?-jrnpk6#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -32,8 +32,14 @@
 .icon-bubble:before {
 	content: "\e606";
 }
+.icon-checkmark:before {
+	content: "\e60c";
+}
 .icon-diamond:before {
 	content: "\e601";
+}
+.icon-th-menu:before {
+	content: "\e609";
 }
 .icon-logout:before {
 	content: "\e602";
@@ -47,6 +53,15 @@
 .icon-comment2:before {
 	content: "\e607";
 }
+.icon-list:before {
+	content: "\e60a";
+}
 .icon-comment3:before {
 	content: "\e608";
+}
+.icon-reorder:before {
+	content: "\e60b";
+}
+.icon-checkmark2:before {
+	content: "\e60d";
 }

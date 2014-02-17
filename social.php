@@ -4,8 +4,6 @@
 
 	$db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
 			
-
-
 	//For commenting
 	if(isset($_POST['comment'])){
 
@@ -30,12 +28,12 @@
 	}
 
 	//For following
-	else if(isset($_GET['follow'])){
+  if(isset($_POST['follow'])){
 
       //follow
-      if($_GET['follow'] == 'yes'){
+      if($_POST['follow'] == 'follow' ){
 
-				$userid = $_GET['user'];
+				$userid = $_POST['user'];
 
 				$relatedUser = $_SESSION['logged_in_user'];
 
@@ -45,13 +43,14 @@
 
 				$stm->execute(array($userid,$relatedUser,'following'));
 
-          header('Location: journal.php?user='.$userid);
-          exit();
+        $results = array('follow' => 'following');
+
+        echo json_encode($results);
       
       //Unfollow
       } else {
 
-        $userid = $_GET['user'];
+        $userid = $_POST['user'];
 
         $relatedUser = $_SESSION['logged_in_user'];
 
@@ -61,10 +60,10 @@
 
         $stm->execute(array($userid,$relatedUser));
 
-        header('Location: journal.php?user='.$userid);
-        exit();
+        $results = array('follow' => 'follow');
+
+        echo json_encode($results);
 
       }
-
-        }
+    }
 ?>
