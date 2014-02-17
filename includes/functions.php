@@ -1,6 +1,5 @@
 <?php 
 
-//Function for posting
 function post($userid,$db,$dbconfig,$sql) {
 
     $stm = $db->dbConn->prepare($sql);
@@ -48,7 +47,7 @@ function post($userid,$db,$dbconfig,$sql) {
       }
 
       echo '<div class="posts-inner">';
-      
+
       /* echo '<p>Posted: '.substr($data['postDate'],0,10).'<p>'; */
       if ($data['postText'] != '') {
         echo '<p class="post-text">'.$data['postText'].'<p>';
@@ -91,4 +90,36 @@ function post($userid,$db,$dbconfig,$sql) {
     }
     //End of a Post
 }
+
+//Function for posting
+
+if(isset($_POST['index'])) {
+  session_start();
+  //Post Query 
+    require_once('db.php');
+    require_once('mysql.php');  
+
+    $index = $_POST['index'];
+    $currentUser = $_SESSION['logged_in_user'];
+    $userid = $_SESSION['logged_in_user'];
+    $db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
+    $sql = "SELECT  postId, postTitle, postDate, postText, posts.userId, postPhoto, users.userHandle, users.userFname, users.userLname,  users.userPic
+             FROM posts 
+             INNER JOIN userRelationship 
+              ON posts.userId = userRelationship.relatingUserId
+             INNER JOIN users 
+              ON posts.userId = users.userId 
+             WHERE relatingUserId = posts.userid 
+              AND userRelationship.relatedUserId  = $currentUser 
+             UNION ALL SELECT  postId, postTitle, postDate, postText, posts.userId, postPhoto, users.userHandle, users.userFname, users.userLname,  users.userPic 
+             FROM posts 
+             INNER JOIN users 
+             ON posts.userId = users.userId 
+             WHERE posts.userId = $currentUser 
+             ORDER BY postDate DESC
+             LIMIT $index , 5 ";
+
+  post($userid,$db,$dbconfig,$sql);
+}
+
 ?>

@@ -39,8 +39,8 @@ $(function(){
     });
   });
 
-//Following 
-$('.btn-follow').on('click', function(e){
+  //Following 
+  $('.btn-follow').on('click', function(e){
     e.preventDefault();
 
     //var this = $(this);
@@ -71,5 +71,35 @@ $('.btn-follow').on('click', function(e){
         console.log('AJAX failed');
         }
     });
+  });
+
+  var index = 0;
+
+  //Following 
+  $(window).on('scroll', function(e){
+    
+    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+   
+      index += 5;
+      console.log(index);
+
+      //var this = $(this);
+      var url = "../trove/includes/functions.php";
+      var data = { index: index };
+
+      $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'html',
+        data: data,
+        success: function(data){
+          console.log('sucsess');
+          $('.content-wrapper').append(data);
+        },
+        error: function(data){
+          console.log('AJAX failed');
+          }
+      });
+    }
   });
 });

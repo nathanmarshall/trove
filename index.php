@@ -43,18 +43,15 @@
 						 INNER JOIN users 
 						 ON posts.userId = users.userId 
 						 WHERE posts.userId = $currentUser 
-						 ORDER BY postDate DESC";
+						 ORDER BY postDate DESC
+						 LIMIT 0 , 5";
 		//List of events 
 		post($userid,$db,$dbconfig,$sql);
 	?>	
 </div>
 <!-- End Content Wrapper -->
-
-
 </div>
 <!-- End Wrapper -->
-
-
 <!-- Include Footer -->
 <?php 
 }

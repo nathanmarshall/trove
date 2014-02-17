@@ -11,9 +11,7 @@ if (!isset($_SESSION['logged_in_user'])){
 
 	<!-- Wrapper Start -->
 	<div class="wrapper">
-	
-		<!-- Inlude Header -->
-		<?php include_once('header.php'); ?>
+
 		
 		<!-- Include Aside -->
 		<?php include_once('aside.php'); ?>
@@ -21,6 +19,8 @@ if (!isset($_SESSION['logged_in_user'])){
 
 		<!-- Content Wrapper -->
 		<div class="content-wrapper">
+		<!-- Inlude Header -->
+		<?php include_once('header.php'); ?>
 
 			
 
