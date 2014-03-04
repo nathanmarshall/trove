@@ -1,3 +1,4 @@
+
 //SASS for Content 
 
 .login-form{
@@ -23,6 +24,8 @@
 	h1{
 		color: $font;
 		margin-bottom: 30px;
+		text-align: center;
+		font-weight: 900;
 	}
 
 	input{
@@ -32,6 +35,8 @@
 		border: none;
 		background: none;
 		border-bottom: 1px solid $line-break;
+		color: white;
+		letter-spacing: 0.075em;
 	}
 
 	input:focus{

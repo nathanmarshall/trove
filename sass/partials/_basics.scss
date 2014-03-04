@@ -25,7 +25,7 @@ h3{
 }
 
 
-h1, h2, h3, h4,p{
+h1, h2, h3, h4, p{
 	color: $font;
 
 	a{
@@ -57,7 +57,7 @@ div.content-wrapper{
 	min-height: 100%;
 	margin-left: 0;
 	width: 100%;
-	background: #181818;
+	background: #222;
 	@include transition(.5s);
 
 	&.comment-slide {

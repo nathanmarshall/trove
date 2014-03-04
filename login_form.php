@@ -4,7 +4,7 @@
 	<!-- Wrapper Start -->
 	<div class="wrapper login-form">
 		<div class="form-container">
-		<img src="images/ui/logo1.png">
+		<h1>TROVE</h1>
 			<!-- Login Form -->
 			<form action="login.php" method="post">
 				<input type="text" name="handle" id="handle" placeholder="Username"> <br>
