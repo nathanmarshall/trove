@@ -18,11 +18,11 @@ $(function(){
 
   //AJAX social
   //Gemming
-  $('.gem-button').click(function(e){
+  $('.btn-gem').click(function(e){
     e.preventDefault();
 
-    var url = $(this).parent().attr('action');
-    var postId = $(this).parent().data('post');
+    var url = '../trove/gem.php';
+    var postId = $(this).data('post');
     var data = { gem: 'true', postId: postId };
 
     $.ajax({
@@ -31,8 +31,14 @@ $(function(){
       dataType: 'json',
       data: data,
       success: function(data){
-        $('span.gem-number').html(data.gems);
-        console.log(data.gems);
+        if (data.is_gemed) {
+          $('.btn-gem').addClass('gemed');
+        } else {
+          $('.btn-gem').removeClass('gemed');
+        }
+
+        $('.icon-diamond').html('&nbsp;' + data.gems.gems);
+        console.log(data.is_gemed, data.gems.gems);
       },
       error: function(data){
         console.log('AJAX failed');
@@ -49,7 +55,6 @@ $(function(){
     var user = $(this).data('user');
     var fo = $(this).attr('data-follow');
     var data = { follow: fo, user: user };
-    console.log(fo);
 
     $.ajax({
       url: url,
@@ -74,26 +79,63 @@ $(function(){
     });
   });
 
-  //comments
+  //view comments
+  var dataPost;
   $('.btn-comment').click(function(){
     $('.comments').toggleClass('slide');
     $('.content-wrapper').toggleClass('comment-slide');
 
-    var dataPost = $(this).data('post');
-    var url = "../trove/includes/functions.php";
+    dataPost = $(this).data('post');
     var data = { commentPost: dataPost };
+    renderComments(data);
+  });
+
+  function renderComments(data2) {
+
+    var url = "../trove/includes/functions.php";
+<<<<<<< HEAD
+    var data = { commentPost: dataPost };
+=======
+    var data2 = { commentPost: dataPost };
+>>>>>>> 0ffa579991a48e6a60ebfc2deaaf61a982232aae
 
     $.ajax({
       url: url,
       type: 'POST',
       dataType: 'html',
-      data: data,
+      data: data2,
       success: function(data){
         $('.comment-list').html(data);
+        console.log('hello');
       },
       error: function(data){
         console.log('AJAX failed');
         }
+    });
+  }
+
+  //Post comment
+  $(document).on('submit', '.comment-form', function(event){
+    event.preventDefault();
+
+    var comment = $('.comment-form input').val();
+    var url = "../trove/social.php";
+    var data = {
+      postId: dataPost,
+      comment: comment
+    };
+
+    $.ajax({
+      url: url,
+      type: 'POST',
+      dataType: 'json',
+      data: data,
+      success: function(){
+        renderComments(dataPost);
+      },
+      error: function(){
+        console.log('AJAX failed');
+      }
     });
   });
 
