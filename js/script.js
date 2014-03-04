@@ -94,7 +94,7 @@ $(function(){
   function renderComments(data2) {
 
     var url = "../trove/includes/functions.php";
-    var data = { commentPost: dataPost };
+    var data2 = { commentPost: dataPost };
 
 
     $.ajax({
