@@ -12,7 +12,7 @@ function post($userid,$db,$dbconfig,$sql) {
 
       $db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
 
-        //For gems 
+      //For gems 
       $sql = "SELECT  COUNT(gemId) AS gemNumber FROM gems WHERE gemPostId = ?";
 
       $stm = $db->dbConn->prepare($sql);
@@ -20,16 +20,6 @@ function post($userid,$db,$dbconfig,$sql) {
       $stm->execute(array($data['postId']));
 
       $results = $stm->fetch();
-
-        //For comments
-  
-      $csql = "SELECT comment, users.userId, users.userHandle FROM comments INNER JOIN users ON users.userId = comments.commentUserId WHERE commentPostId = ? ORDER BY commentDate ASC";
-
-      $cstm = $db->dbConn->prepare($csql);
-
-      $cstm->execute(array($data['postId']));
-
-      $cresults = $cstm->fetchAll();
 
       //Start of a post
       echo '<article class="event">';
@@ -42,7 +32,7 @@ function post($userid,$db,$dbconfig,$sql) {
 
       if($data['postPhoto'] != ''){
         echo '<div class="post-image" style=" background-image: url(images/postimages/'.$data['userId'].'/'.$data['postPhoto'].')">';
-        echo '<ul class="ls-social"><li><button class="btn-comment"><span class="icon-comment3"></span></button></li><li><button class="btn-gem"><span class="icon-diamond"></span></button></li></ul>';
+        echo '<ul class="ls-social"><li><button class="btn-comment" data-post="'.$data['postId'].'"><span class="icon-comment3"></span></button></li><li><button class="btn-gem"><span class="icon-diamond"></span></button></li></ul>';
         echo '</div>';
       }
 
@@ -72,11 +62,6 @@ function post($userid,$db,$dbconfig,$sql) {
       //social container
       echo '<form class="gem" data-post="'.$data['postId'].'" action="gem.php" method="post"><button type="submit" class="gem-button" value="gem" name="gem">+ <span class="icon-diamond"></span></button><span class="gem-number">'.$results['gemNumber'].' </span>Gem(s)</form>';
     
-    
-    foreach ($cresults as $commentdata) {
-      echo '<p class="user-comment"><span class="icon-chat"></span><a href="journal.php?user='.$commentdata['userId'].'"><span>'.$commentdata['userHandle'].'</span></a> '.$commentdata['comment'].'</p>';
-    }
-
       echo '<form class="new-comment" action="social.php?action=comment" method="post">
       <input type="hidden" name="post" value="'.$data['postId'].'">
       <input placeholder="Your comment" class="comment-field" type="text" name="comment" id="comment">
@@ -120,6 +105,33 @@ if(isset($_POST['index'])) {
              LIMIT $index , 5 ";
 
   post($userid,$db,$dbconfig,$sql);
+}
+
+//Get comments
+if(isset($_POST['commentPost'])) {
+
+  require_once('db.php');
+  require_once('mysql.php');
+
+  $db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
+  $commentPost = $_POST['commentPost'];
+  $sql = "SELECT comment, users.userId, users.userHandle, users.userPic FROM comments INNER JOIN users ON users.userId = comments.commentUserId WHERE commentPostId = ? ORDER BY commentDate ASC";
+
+  $stm = $db->dbConn->prepare($sql);
+
+  $stm->execute(array($commentPost));
+
+  $results = $stm->fetchAll();
+
+  foreach ($results as $commentdata) {
+    echo '<div class="comment">';
+    echo '<img src="images/userimages/'.$commentdata['userId'].'/'.$commentdata['userPic'].'">';
+    
+    echo '<a href="journal.php?user='.$commentdata['userId'].'"><span>'.$commentdata['userHandle'].'</span></a>';
+    echo '<p class="user-comment">'.$commentdata['comment'].'</p>';
+    echo '</div>';
+    echo '</div>';
+  }
 }
 
 ?>

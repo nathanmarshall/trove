@@ -4,22 +4,20 @@
 } else {
 
  ?>
- 	<?php 
- 		require_once('includes/functions.php'); 
+ 	<?php
+ 		require_once('includes/functions.php');
  		require_once 'includes/mysql.php';
-		require_once 'includes/db.php'; 
+		require_once 'includes/db.php';
  	?>
 	<!-- Include Head -->
 	<?php include_once('head.php'); ?>
-
-	<!-- Add form -->
-	<?php require_once('add_form.php'); ?>
 
 	<!-- Wrapper Start -->
 	<div class="wrapper">
 	<!-- Inlude Header -->
 	<?php require_once('aside.php'); ?>
-	<!-- Include Aside -->
+	<!-- Include comments -->
+	<?php require_once('comments.php'); ?>
 
 
 	<!-- Content Wrapper -->
@@ -29,31 +27,31 @@
 
 		$currentUser = $_SESSION['logged_in_user'];
 
-		//Post Query 
+		//Post Query
 		$sql = "SELECT  postId, postTitle, postDate, postText, posts.userId, postPhoto, users.userHandle, users.userFname, users.userLname,  users.userPic
-		 				 FROM posts 
-		 				 INNER JOIN userRelationship 
+		 				 FROM posts
+		 				 INNER JOIN userRelationship
 		 				 	ON posts.userId = userRelationship.relatingUserId
-						 INNER JOIN users 
-						 	ON posts.userId = users.userId 
-						 WHERE relatingUserId = posts.userid 
-						 	AND userRelationship.relatedUserId  = $currentUser 
-						 UNION ALL SELECT  postId, postTitle, postDate, postText, posts.userId, postPhoto, users.userHandle, users.userFname, users.userLname,  users.userPic 
-						 FROM posts 
-						 INNER JOIN users 
-						 ON posts.userId = users.userId 
-						 WHERE posts.userId = $currentUser 
+						 INNER JOIN users
+						 	ON posts.userId = users.userId
+						 WHERE relatingUserId = posts.userid
+						 	AND userRelationship.relatedUserId  = $currentUser
+						 UNION ALL SELECT  postId, postTitle, postDate, postText, posts.userId, postPhoto, users.userHandle, users.userFname, users.userLname,  users.userPic
+						 FROM posts
+						 INNER JOIN users
+						 ON posts.userId = users.userId
+						 WHERE posts.userId = $currentUser
 						 ORDER BY postDate DESC
 						 LIMIT 0 , 5";
-		//List of events 
+		//List of events
 		post($userid,$db,$dbconfig,$sql);
-	?>	
+	?>
 </div>
 <!-- End Content Wrapper -->
 </div>
 <!-- End Wrapper -->
 <!-- Include Footer -->
-<?php 
+<?php
 }
 //End logged_in_user check
 include_once('footer.php'); ?>

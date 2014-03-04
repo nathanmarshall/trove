@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start();
 if (!isset($_SESSION['logged_in_user'])){
   header('Location: login_form.php');
 } else {
@@ -6,30 +6,22 @@ if (!isset($_SESSION['logged_in_user'])){
 
 <!-- Include Head -->
 <?php include_once('head.php'); ?>
-<!-- Add form -->
-	<?php require_once('add_form.php'); ?>
 
 	<!-- Wrapper Start -->
 	<div class="wrapper">
 
-		
 		<!-- Include Aside -->
 		<?php include_once('aside.php'); ?>
-
 
 		<!-- Content Wrapper -->
 		<div class="content-wrapper">
 		<!-- Inlude Header -->
 		<?php include_once('header.php'); ?>
 
-			
-
 		<!-- Search form -->
-
 		<form class="discover-search" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 			<input type="text" name="search" id="search" placeholder="Search by username">
 		</form>
-
 
 		<!-- Search Results -->
 		<?php
@@ -47,7 +39,7 @@ if (!isset($_SESSION['logged_in_user'])){
 				$db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
 
 				$stm = $db->dbConn->prepare($sql);
-	
+
 			    $stm->execute(array());
 
 			    $results = $stm->fetchAll();
@@ -66,10 +58,10 @@ if (!isset($_SESSION['logged_in_user'])){
 
 				}
 
-			//Displays Friends by default 
+			//Displays Friends by default
 			} else {
 
-			
+
 				$currentUser = $_SESSION['logged_in_user'];
 
 				$sql = "SELECT relatedUserId, relatingUserId, relation, users.userFname, users.userLname, users.userPic, users.userId, users.userHandle FROM userRelationship INNER JOIN users ON userRelationship.relatingUserId = users.userId
@@ -78,7 +70,7 @@ if (!isset($_SESSION['logged_in_user'])){
 				$db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
 
 				$stm = $db->dbConn->prepare($sql);
-	
+
 			    $stm->execute(array());
 
 			    $results = $stm->fetchAll();
@@ -98,7 +90,7 @@ if (!isset($_SESSION['logged_in_user'])){
 
 			}
 
-			
+
 
 		?>
 
@@ -111,18 +103,18 @@ if (!isset($_SESSION['logged_in_user'])){
 
 
 <!-- Include Footer -->
-<?php 
+<?php
 }
 include_once('footer.php'); ?>
 
 
 
-<!-- Start Event 
+<!-- Start Event
 			<article class="event">
-				
+
 			<img src="images/event.jpg" >
 			<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.</p>
-			
-			
+
+
 			</article>
 			 End Event -->

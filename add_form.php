@@ -1,68 +1,73 @@
-	<?php 
-	//Script for determining if the user has alreayd posted today:
-	//Required Files
-	require_once('includes/mysql.php');
-	require_once('includes/db.php');
+<?php
+session_start();
+//Required Files
+require_once('includes/mysql.php');
+require_once('includes/db.php');
 
-	//Gets Current Time 
-	$current_time = date("Y-m-d");
-	$current_user = $_SESSION['logged_in_user'];
+//Gets Current Time
+$current_time = date("Y-m-d");
+$current_user = $_SESSION['logged_in_user'];
 
-	$db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
+$db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
 
-	$sql = "SELECT count(postDate) AS postsToday FROM posts WHERE userId = ? AND postDate LIKE '$current_time%'";
+$sql = "SELECT count(postDate) AS postsToday FROM posts WHERE userId = ? AND postDate LIKE '$current_time%'";
 
-	$stm = $db->dbConn->prepare($sql);
+$stm = $db->dbConn->prepare($sql);
 
-	$stm->execute(array($current_user));
+$stm->execute(array($current_user));
 
-	$results = $stm->fetch();
+$results = $stm->fetch();
 
-	?>
-		<!-- Add form overlay -->
-	<section class="overlay">
-	<?php 
+?>
+	<!-- Add form overlay -->
+<!-- Include Head -->
+<?php
+include_once('head.php');
+// require_once('includes/functions.php');
+?>
 
-				//If user HASN'T posted today 
-	if ($results['postsToday'] == 0){
-	?>
+<!-- Wrapper Start -->
+<div class="wrapper">
+<?php require_once('aside.php'); ?>
+<div class="content-wrapper">
+<?php require_once('header.php'); ?>
 
-	<header>
-		<h1> Create a post </h1>
-	</header>
+<?php
 
+			//If user HASN'T posted today
+if ($results['postsToday'] == 0){
+?>
 
-	<!-- Wrapper Start -->
-	<div class="add-wrapper">
+<!-- Wrapper Start -->
+<div class="add-wrapper">
 
-		<!-- Login Form -->
-		<form class="add" enctype="multipart/form-data" action="add.php" method="post">
-			<input type="file" name="picture" id="picture"> <br><br>
-			<input id="title" name="title" type="text" placeholder="Your post's title"><br><br>
-			<textarea name="text" rows="0" cols="1" id="text" placeholder="So, what happened today?&nbsp;(300 char max)"></textarea><br><br>
-			<input  type="radio" name="privacy" value="public" checked><span class="privacy" >Public</span>
-			<input  type="radio" name="privacy" value="private"><span class="privacy" >Private</span>
-			<input class="submit" type="submit" name="submit">
-		</form>
-	</div>
-	<!-- End Wrapper -->
-	
-	<?php 
-				//If user HAS posted today 
-	} else {
-	
-		?>
-			<header>
-		<h1> You Already Posted Today</h1>
-	</header>
+	<!-- Login Form -->
+	<form class="add" enctype="multipart/form-data" action="add.php" method="post">
+		<input type="file" name="picture" id="picture"> <br><br>
+		<input id="title" name="title" type="text" placeholder="Your post's title"><br><br>
+		<textarea name="text" rows="0" cols="1" id="text" placeholder="So, what happened today?&nbsp;(300 char max)"></textarea><br><br>
+		<input  type="radio" name="privacy" value="public" checked><span class="privacy" >Public</span>
+		<input  type="radio" name="privacy" value="private"><span class="privacy" >Private</span>
+		<input class="submit" type="submit" name="submit">
+	</form>
+</div>
+<!-- End Wrapper -->
 
-		<?php 
-
-
-	}
+<?php
+			//If user HAS posted today
+} else {
 
 	?>
-		</section>
-	<!-- End Add form overlay -->
-	<?php 
-	?>
+		<header>
+	<h1> You Already Posted Today</h1>
+</header>
+
+	<?php
+
+
+}
+
+?>
+</div>
+</div>
+<?php require_once('footer.php'); ?>

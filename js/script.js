@@ -1,6 +1,6 @@
 //Script.js
 
-//Jquery Wrapper 
+//Jquery Wrapper
 $(function(){
 
 	//Show menu
@@ -9,7 +9,7 @@ $(function(){
 		$('.content-wrapper').toggleClass('slide');
 	});
 
-  //Hide Menu 
+  //Hide Menu
   //$('.content-wrapper').click(function(e){
    // $('.content-wrapper').removeClass('slide');
   //  $('.logo').removeClass('slide');
@@ -39,7 +39,7 @@ $(function(){
     });
   });
 
-  //Following 
+  //Following
   $('.btn-follow').on('click', function(e){
     e.preventDefault();
 
@@ -73,13 +73,37 @@ $(function(){
     });
   });
 
+  //comments
+  $('.btn-comment').click(function(){
+    $('.comments').toggleClass('slide');
+    $('.content-wrapper').toggleClass('comment-slide');
+
+    var dataPost = $(this).data('post');
+    var url = "../trove/includes/functions.php";
+    var data = { commentPost: dataPost }
+
+    $.ajax({
+      url: url,
+      type: 'POST',
+      dataType: 'html',
+      data: data,
+      success: function(data){
+        $('.comment-list').html(data);
+      },
+      error: function(data){
+        console.log('AJAX failed');
+        }
+    });
+  });
+
+   //Following
+
   var index = 0;
 
-  //Following 
   $(window).on('scroll', function(e){
-    
+
     if($(window).scrollTop() + $(window).height() == $(document).height()) {
-   
+
       index += 5;
       console.log(index);
 

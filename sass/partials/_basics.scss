@@ -1,4 +1,4 @@
-//SASS for Content 
+//SASS for Content
 
 html{
 	height: 100%;
@@ -39,9 +39,9 @@ a{
 }
 
 
-//Page Wrapper 
+//Page Wrapper
 div.wrapper{
-	margin: 0 auto; 
+	margin: 0 auto;
 	width: 100%;
 	position: absolute;
 	z-index: 9999;
@@ -50,7 +50,7 @@ div.wrapper{
 }
 
 
-//Content Wrapper 
+//Content Wrapper
 div.content-wrapper{
 	position: absolute;
 	margin-left: 250px;
@@ -58,6 +58,10 @@ div.content-wrapper{
 	margin-left: 0;
 	width: 100%;
 	background: #181818;
-	@include transition(.2s);
+	@include transition(.5s);
+
+	&.comment-slide {
+		@include transform(translatex(-250px));
+	}
 }
-	
+

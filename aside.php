@@ -1,22 +1,22 @@
-<?php 
+<?php
 		require_once('includes/mysql.php');
 	 	require_once('includes/db.php');
 
-	 	//Get user Id 
+	 	//Get user Id
 		$userid = $_SESSION['logged_in_user'];
 
 		$sql = "SELECT userId, userFname, userLname, userPic FROM users WHERE userId = $userid";
 
 		$db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
-	
+
 		$stm = $db->dbConn->prepare($sql);
-	
+
 		$stm->execute(array());
-	
+
 		$data = $stm->fetch(PDO::FETCH_ASSOC);
 ?>
 
-<aside>	
+<aside>
 	<!-- Menu -->
 	<ul class="menu">
 		<li><span class="icon-house"></span><a href="index.php">Feed</a></li>
@@ -27,5 +27,5 @@
 	</ul>
 	<!-- End Menu -->
 	<!-- New Post -->
-	<a class="link-new" href="#">+ New Momento</a>
+	<a class="link-new" href="add_form.php">+ New Momento</a>
 </aside>

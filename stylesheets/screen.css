@@ -166,9 +166,17 @@ div.content-wrapper {
   margin-left: 0;
   width: 100%;
   background: #181818;
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+/* line 63, ../sass/partials/_basics.scss */
+div.content-wrapper.comment-slide {
+  -webkit-transform: translatex(-250px);
+  -moz-transform: translatex(-250px);
+  -ms-transform: translatex(-250px);
+  -o-transform: translatex(-250px);
+  transform: translatex(-250px);
 }
 
 /* line 4, ../sass/partials/_aside.scss */
@@ -268,26 +276,25 @@ section.overlay {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(52, 54, 58, 0.97);
   z-index: 9998;
   overflow-y: scroll;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   transition: 0.2s;
 }
-/* line 15, ../sass/partials/_add.scss */
+/* line 14, ../sass/partials/_add.scss */
 section.overlay header {
   line-height: 80px;
   height: 80px;
 }
-/* line 19, ../sass/partials/_add.scss */
+/* line 18, ../sass/partials/_add.scss */
 section.overlay header h1 {
   color: white;
   text-align: center;
   vertical-align: middle;
 }
 
-/* line 28, ../sass/partials/_add.scss */
+/* line 26, ../sass/partials/_add.scss */
 div.add-wrapper {
   width: 80%;
   max-width: 960px;
@@ -296,17 +303,17 @@ div.add-wrapper {
   line-height: 100%;
 }
 
-/* line 36, ../sass/partials/_add.scss */
+/* line 34, ../sass/partials/_add.scss */
 .hide {
   display: none;
 }
 
-/* line 40, ../sass/partials/_add.scss */
+/* line 38, ../sass/partials/_add.scss */
 form.add {
   width: 100%;
   padding: 2em 0;
 }
-/* line 44, ../sass/partials/_add.scss */
+/* line 42, ../sass/partials/_add.scss */
 form.add input#title, form.add textarea#text {
   width: 100%;
   height: 70px;
@@ -320,12 +327,12 @@ form.add input#title, form.add textarea#text {
   resize: none;
   color: white;
 }
-/* line 58, ../sass/partials/_add.scss */
+/* line 56, ../sass/partials/_add.scss */
 form.add input#title:focus, form.add textarea#text:focus {
   outline: none;
   color: white;
 }
-/* line 63, ../sass/partials/_add.scss */
+/* line 61, ../sass/partials/_add.scss */
 form.add input#picture {
   display: block;
   width: 60px;
@@ -337,11 +344,11 @@ form.add input#picture {
   color: rgba(0, 0, 0, 0);
   text-indent: -999px;
 }
-/* line 75, ../sass/partials/_add.scss */
+/* line 73, ../sass/partials/_add.scss */
 form.add input.privacy {
   margin-right: 2em;
 }
-/* line 81, ../sass/partials/_add.scss */
+/* line 77, ../sass/partials/_add.scss */
 form.add input.submit {
   padding: 1em 3em;
   margin-top: 4em !important;
@@ -352,7 +359,7 @@ form.add input.submit {
   border: none;
   border-radius: 5px;
 }
-/* line 93, ../sass/partials/_add.scss */
+/* line 89, ../sass/partials/_add.scss */
 form.add span.privacy {
   color: #7f8589;
   padding: 1em 2em 0 .5em;
@@ -360,7 +367,7 @@ form.add span.privacy {
   vertical-align: middle;
 }
 @media screen and (max-width: 768px) {
-  /* line 93, ../sass/partials/_add.scss */
+  /* line 89, ../sass/partials/_add.scss */
   form.add span.privacy {
     font-size: 1em;
   }
@@ -393,54 +400,121 @@ button:hover {
   background: #e9e9e9;
 }
 
-/* line 27, ../sass/partials/_social.scss */
-input.comment-field {
-  padding: 2em 0;
-  width: 100%;
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border: none;
-  background: none;
-  border-bottom: 1px solid #d5d5d5;
-}
-@media screen and (max-width: 768px) {
-  /* line 27, ../sass/partials/_social.scss */
-  input.comment-field {
-    margin: 0 6%;
-    width: 88%;
-  }
-}
-
-/* line 42, ../sass/partials/_social.scss */
+/* line 26, ../sass/partials/_social.scss */
 form.gem {
   color: white;
   font-weight: 600;
 }
 @media screen and (max-width: 768px) {
-  /* line 42, ../sass/partials/_social.scss */
+  /* line 26, ../sass/partials/_social.scss */
   form.gem {
     margin: 0 6%;
   }
 }
 
-/* line 51, ../sass/partials/_social.scss */
+/* line 35, ../sass/partials/_social.scss */
 input:focus {
   outline: none;
 }
 
-/* line 55, ../sass/partials/_social.scss */
-p.user-comment {
-  margin: .3em 0;
+/* line 41, ../sass/partials/_social.scss */
+.comments {
+  position: fixed;
+  right: -250px;
+  z-index: 9999;
+  height: 100%;
+  width: 250px;
+  background: #181818;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
 }
-/* line 58, ../sass/partials/_social.scss */
-p.user-comment span {
-  font-weight: 600;
+/* line 50, ../sass/partials/_social.scss */
+.comments.slide {
+  -webkit-transform: translatex(-250px);
+  -moz-transform: translatex(-250px);
+  -ms-transform: translatex(-250px);
+  -o-transform: translatex(-250px);
+  transform: translatex(-250px);
 }
-@media screen and (max-width: 768px) {
-  /* line 55, ../sass/partials/_social.scss */
-  p.user-comment {
-    margin: 0 6%;
-  }
+/* line 54, ../sass/partials/_social.scss */
+.comments header {
+  display: table-cell;
+  height: 50px;
+  line-height: 50px;
+}
+/* line 60, ../sass/partials/_social.scss */
+.comments .comment-wrapper {
+  margin-top: 50px;
+  height: 100%;
+  overflow-y: scroll;
+}
+/* line 65, ../sass/partials/_social.scss */
+.comments .comment-wrapper form {
+  width: 255px;
+  margin: 0 auto;
+}
+/* line 69, ../sass/partials/_social.scss */
+.comments .comment-wrapper form input {
+  padding: 1em 0;
+  border: none;
+  background: #0C0C0C;
+  width: 100%;
+  color: white;
+  font-weight: 200;
+}
+/* line 8, ../bourbon/css3/_placeholder.scss */
+.comments .comment-wrapper form input::-webkit-input-placeholder {
+  color: white;
+  font-weight: 200;
+}
+/* line 14, ../bourbon/css3/_placeholder.scss */
+.comments .comment-wrapper form input:-moz-placeholder {
+  color: white;
+  font-weight: 200;
+}
+/* line 19, ../bourbon/css3/_placeholder.scss */
+.comments .comment-wrapper form input::-moz-placeholder {
+  color: white;
+  font-weight: 200;
+}
+/* line 24, ../bourbon/css3/_placeholder.scss */
+.comments .comment-wrapper form input:-ms-input-placeholder {
+  color: white;
+  font-weight: 200;
+}
+/* line 84, ../sass/partials/_social.scss */
+.comments .comment-wrapper .comment {
+  margin: 0 auto;
+  position: relative;
+  width: 200px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 45px;
+  border-top: 1px solid #303030;
+}
+/* line 94, ../sass/partials/_social.scss */
+.comments .comment-wrapper .comment:last-of-type {
+  border-bottom: 1px solid #303030;
+}
+/* line 98, ../sass/partials/_social.scss */
+.comments .comment-wrapper .comment a {
+  color: white;
+  font-weight: 800;
+}
+/* line 103, ../sass/partials/_social.scss */
+.comments .comment-wrapper .comment p.user-comment {
+  margin: .6em 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+/* line 109, ../sass/partials/_social.scss */
+.comments .comment-wrapper .comment img {
+  position: absolute;
+  left: 0;
+  border-radius: 999em;
+  width: 32px;
+  height: 32px;
 }
 
 /* line 11, ../sass/partials/_register.scss */
@@ -522,22 +596,28 @@ article.event {
 article.event div.post-image {
   position: relative;
   width: 100%;
-  height: 600px;
   background: center center no-repeat;
   background-color: teal;
   background-size: cover !important;
 }
-/* line 24, ../sass/partials/_posts.scss */
+/* line 22, ../sass/partials/_posts.scss */
+article.event div.post-image:after {
+  padding-top: 56.25%;
+  /*16:9 ratio*/
+  display: block;
+  content: '';
+}
+/* line 29, ../sass/partials/_posts.scss */
 article.event .ls-social {
   position: absolute;
   right: 10px;
   bottom: 10px;
 }
-/* line 29, ../sass/partials/_posts.scss */
+/* line 34, ../sass/partials/_posts.scss */
 article.event .ls-social li {
   padding: .5em;
 }
-/* line 32, ../sass/partials/_posts.scss */
+/* line 37, ../sass/partials/_posts.scss */
 article.event .ls-social li [class^="btn"] {
   background: #111;
   border-radius: 5px;
@@ -548,20 +628,20 @@ article.event .ls-social li [class^="btn"] {
   width: 35px;
   height: 35px;
 }
-/* line 39, ../sass/partials/_posts.scss */
+/* line 44, ../sass/partials/_posts.scss */
 article.event .ls-social li [class^="btn"]:hover {
   background: #E95846;
 }
-/* line 43, ../sass/partials/_posts.scss */
+/* line 48, ../sass/partials/_posts.scss */
 article.event .ls-social li [class^="btn"] span {
   color: white;
 }
-/* line 51, ../sass/partials/_posts.scss */
+/* line 56, ../sass/partials/_posts.scss */
 article.event .posts-inner {
   max-width: 640px;
   margin: 0 auto;
 }
-/* line 56, ../sass/partials/_posts.scss */
+/* line 61, ../sass/partials/_posts.scss */
 article.event .posts-inner .post-text {
   font-style: italic;
   font-weight: 500;
@@ -569,28 +649,28 @@ article.event .posts-inner .post-text {
   padding: 6em 0;
   font-size: 1.5em;
 }
-/* line 63, ../sass/partials/_posts.scss */
+/* line 68, ../sass/partials/_posts.scss */
 article.event .posts-inner .post-text:before {
   content: "\201C";
 }
-/* line 67, ../sass/partials/_posts.scss */
+/* line 72, ../sass/partials/_posts.scss */
 article.event .posts-inner .post-text:after {
   content: "\201D";
 }
 @media screen and (max-width: 768px) {
-  /* line 56, ../sass/partials/_posts.scss */
+  /* line 61, ../sass/partials/_posts.scss */
   article.event .posts-inner .post-text {
     margin: 1em 6%;
   }
 }
-/* line 78, ../sass/partials/_posts.scss */
+/* line 83, ../sass/partials/_posts.scss */
 article.event img.post-user-pic {
   width: 65px;
   height: 65px;
   float: left;
   border-radius: 100px;
 }
-/* line 87, ../sass/partials/_posts.scss */
+/* line 92, ../sass/partials/_posts.scss */
 article.event header {
   position: absolute;
   z-index: 9999;
@@ -600,7 +680,7 @@ article.event header {
   top: 10px;
 }
 @media screen and (max-width: 768px) {
-  /* line 87, ../sass/partials/_posts.scss */
+  /* line 92, ../sass/partials/_posts.scss */
   article.event header {
     padding: 1em 6%;
   }
@@ -612,18 +692,18 @@ article.event header {
   }
 }
 
-/* line 107, ../sass/partials/_posts.scss */
+/* line 112, ../sass/partials/_posts.scss */
 div.event-info {
   display: inline-block;
   line-height: 20px;
   vertical-align: middle;
   padding: 0 0 0 1em;
 }
-/* line 114, ../sass/partials/_posts.scss */
+/* line 119, ../sass/partials/_posts.scss */
 div.event-info h2 {
   font-weight: 600;
 }
-/* line 119, ../sass/partials/_posts.scss */
+/* line 124, ../sass/partials/_posts.scss */
 div.event-info h3 {
   font-weight: 400;
 }

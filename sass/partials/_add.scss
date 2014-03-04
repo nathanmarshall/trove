@@ -1,4 +1,4 @@
-// SASS for add form overlay  
+// SASS for add form overlay
 
 section.overlay{
 	position: fixed;
@@ -6,7 +6,6 @@ section.overlay{
 	left:0;
 	right:0;
 	bottom:0;
-	background: rgba(52,54,58,0.97);
 	z-index: 9998;
 	overflow-y: scroll;
 
@@ -21,7 +20,6 @@ section.overlay{
 			text-align: center;
 			vertical-align: middle;
 		}
-
 	}
 }
 
@@ -51,7 +49,7 @@ form.add{
 		outline: none;
 		font-size: 24px;
 		font-weight: 300 !important;
-		 resize: none; 
+		 resize: none;
 		color: white;
 	}
 
@@ -74,8 +72,6 @@ form.add{
 
 	input.privacy{
 		margin-right: 2em;
-
-
 	}
 
 	input.submit{
@@ -102,5 +98,5 @@ form.add{
 	}
 
 
-	
+
 }
