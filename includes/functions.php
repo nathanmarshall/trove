@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function post($userid,$db,$dbconfig,$sql) {
 
@@ -12,14 +12,14 @@ function post($userid,$db,$dbconfig,$sql) {
 
       $db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
 
-      //For gems 
+      //For gems
       $sql = "SELECT  COUNT(gemId) AS gemNumber FROM gems WHERE gemPostId = ?";
 
       $stm = $db->dbConn->prepare($sql);
 
       $stm->execute(array($data['postId']));
 
-      $results = $stm->fetch();
+      $count = $stm->fetch();
 
       //Start of a post
       echo '<article class="event">';
@@ -27,12 +27,13 @@ function post($userid,$db,$dbconfig,$sql) {
       echo '<a href="journal.php?user='.$data['userId'].'"><img class="post-user-pic" src="images/userimages/'.$data['userId'].'/'.$data['userPic'].'"></a>';
       echo '<div class="event-info">';
       echo '<h2>'.$data['postTitle'].'<h2>';
-      echo '<a href="journal.php?user='.$data['userId'].'"><h3>by '.$data['userHandle'].'<h3></a>';        echo '</div>';
+      echo '<a href="journal.php?user='.$data['userId'].'"><h3>by '.$data['userHandle'].'<h3></a>';
+      echo '</div>';
       echo "</header>";
 
       if($data['postPhoto'] != ''){
         echo '<div class="post-image" style=" background-image: url(images/postimages/'.$data['userId'].'/'.$data['postPhoto'].')">';
-        echo '<ul class="ls-social"><li><button class="btn-comment" data-post="'.$data['postId'].'"><span class="icon-comment3"></span></button></li><li><button class="btn-gem"><span class="icon-diamond"></span></button></li></ul>';
+        echo '<ul class="ls-social"><li><button class="btn-comment" data-post="'.$data['postId'].'"><span class="icon-comment3"></span></button></li><li><button data-post="'.$data['postId'].'" class="btn-gem"><span class="icon-diamond">&nbsp;'.implode($count).'</span></button></li></ul>';
         echo '</div>';
       }
 
@@ -40,38 +41,21 @@ function post($userid,$db,$dbconfig,$sql) {
 
       /* echo '<p>Posted: '.substr($data['postDate'],0,10).'<p>'; */
       if ($data['postText'] != '') {
+        $month = date("M", strtotime($data['postDate']));
+        $day = date("jS", strtotime($data['postDate']));
+        $year = date("Y", strtotime($data['postDate']));
+
+        echo '<span class="month">'.$month.'</span>';
+        echo '<span class="day">'.$day.'</span>';
+        echo '<span class="year">'.$year.'</span>';
         echo '<p class="post-text">'.$data['postText'].'<p>';
         echo '</div>';
       }
-     
-        //Gems 
-        /* 
-      $logged_in_user = $_SESSION['logged_in_user'];
 
-      $gemPostId = $data['postId'];
-      $gemUserId = $_SESSION['logged_in_user'];
 
-      $sql = "SELECT count(gemId) AS gems FROM gems WHERE gemPostId = ? AND gemUserId = ?";
-
-      $stm = $db->dbConn->prepare($sql);
-
-      $stm->execute(array($gemPostId, $gemUserId));
-
-      $match_results = $stm->fetch();
-
-      //social container
-      echo '<form class="gem" data-post="'.$data['postId'].'" action="gem.php" method="post"><button type="submit" class="gem-button" value="gem" name="gem">+ <span class="icon-diamond"></span></button><span class="gem-number">'.$results['gemNumber'].' </span>Gem(s)</form>';
-    
-      echo '<form class="new-comment" action="social.php?action=comment" method="post">
-      <input type="hidden" name="post" value="'.$data['postId'].'">
-      <input placeholder="Your comment" class="comment-field" type="text" name="comment" id="comment">
-      </form>
-      <br>';
-    */
-  
       //end social container
       echo '</article>';
-      
+
     }
     //End of a Post
 }
@@ -80,27 +64,27 @@ function post($userid,$db,$dbconfig,$sql) {
 
 if(isset($_POST['index'])) {
   session_start();
-  //Post Query 
+  //Post Query
     require_once('db.php');
-    require_once('mysql.php');  
+    require_once('mysql.php');
 
     $index = $_POST['index'];
     $currentUser = $_SESSION['logged_in_user'];
     $userid = $_SESSION['logged_in_user'];
     $db = new MySQL($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['database']);
     $sql = "SELECT  postId, postTitle, postDate, postText, posts.userId, postPhoto, users.userHandle, users.userFname, users.userLname,  users.userPic
-             FROM posts 
-             INNER JOIN userRelationship 
+             FROM posts
+             INNER JOIN userRelationship
               ON posts.userId = userRelationship.relatingUserId
-             INNER JOIN users 
-              ON posts.userId = users.userId 
-             WHERE relatingUserId = posts.userid 
-              AND userRelationship.relatedUserId  = $currentUser 
-             UNION ALL SELECT  postId, postTitle, postDate, postText, posts.userId, postPhoto, users.userHandle, users.userFname, users.userLname,  users.userPic 
-             FROM posts 
-             INNER JOIN users 
-             ON posts.userId = users.userId 
-             WHERE posts.userId = $currentUser 
+             INNER JOIN users
+              ON posts.userId = users.userId
+             WHERE relatingUserId = posts.userid
+              AND userRelationship.relatedUserId  = $currentUser
+             UNION ALL SELECT  postId, postTitle, postDate, postText, posts.userId, postPhoto, users.userHandle, users.userFname, users.userLname,  users.userPic
+             FROM posts
+             INNER JOIN users
+             ON posts.userId = users.userId
+             WHERE posts.userId = $currentUser
              ORDER BY postDate DESC
              LIMIT $index , 5 ";
 
@@ -126,7 +110,7 @@ if(isset($_POST['commentPost'])) {
   foreach ($results as $commentdata) {
     echo '<div class="comment">';
     echo '<img src="images/userimages/'.$commentdata['userId'].'/'.$commentdata['userPic'].'">';
-    
+
     echo '<a href="journal.php?user='.$commentdata['userId'].'"><span>'.$commentdata['userHandle'].'</span></a>';
     echo '<p class="user-comment">'.$commentdata['comment'].'</p>';
     echo '</div>';
