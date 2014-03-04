@@ -24,6 +24,7 @@ $(function(){
     var url = '../trove/gem.php';
     var postId = $(this).data('post');
     var data = { gem: 'true', postId: postId };
+    var $scope = $(this);
 
     $.ajax({
       url: url,
@@ -32,12 +33,12 @@ $(function(){
       data: data,
       success: function(data){
         if (data.is_gemed) {
-          $('.btn-gem').addClass('gemed');
+          $scope.addClass('gemed');
         } else {
-          $('.btn-gem').removeClass('gemed');
+          $scope.removeClass('gemed');
         }
 
-        $('.icon-diamond').html('&nbsp;' + data.gems.gems);
+        $scope.children('.icon-diamond').html('&nbsp;' + data.gems.gems);
         console.log(data.is_gemed, data.gems.gems);
       },
       error: function(data){
@@ -93,11 +94,8 @@ $(function(){
   function renderComments(data2) {
 
     var url = "../trove/includes/functions.php";
-<<<<<<< HEAD
     var data = { commentPost: dataPost };
-=======
-    var data2 = { commentPost: dataPost };
->>>>>>> 0ffa579991a48e6a60ebfc2deaaf61a982232aae
+
 
     $.ajax({
       url: url,

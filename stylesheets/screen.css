@@ -1,9 +1,9 @@
+@import url(../icomoon/style.css);
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-@import url(../icomoon/style.css);
-/* line 17, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../Users/Nathan/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,45 +25,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../Users/Nathan/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../Users/Nathan/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../Users/Nathan/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../Users/Nathan/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../Users/Nathan/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../Users/Nathan/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../Users/Nathan/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../Users/Nathan/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -408,34 +408,30 @@ form.add span.privacy {
   -moz-transition: 0.2s;
   transition: 0.2s;
 }
-/* line 21, ../sass/partials/_social.scss */
-.gem-button.gemed {
-  background: #e9e9e9 !important;
-}
 
-/* line 26, ../sass/partials/_social.scss */
+/* line 22, ../sass/partials/_social.scss */
 button:hover {
   background: grey;
 }
 
-/* line 30, ../sass/partials/_social.scss */
+/* line 26, ../sass/partials/_social.scss */
 form.gem {
   color: white;
   font-weight: 600;
 }
 @media screen and (max-width: 768px) {
-  /* line 30, ../sass/partials/_social.scss */
+  /* line 26, ../sass/partials/_social.scss */
   form.gem {
     margin: 0 6%;
   }
 }
 
-/* line 39, ../sass/partials/_social.scss */
+/* line 35, ../sass/partials/_social.scss */
 input:focus {
   outline: none;
 }
 
-/* line 45, ../sass/partials/_social.scss */
+/* line 41, ../sass/partials/_social.scss */
 .comments {
   position: fixed;
   right: -250px;
@@ -447,7 +443,7 @@ input:focus {
   -moz-transition: 0.5s;
   transition: 0.5s;
 }
-/* line 54, ../sass/partials/_social.scss */
+/* line 50, ../sass/partials/_social.scss */
 .comments.slide {
   -webkit-transform: translatex(-250px);
   -moz-transform: translatex(-250px);
@@ -455,19 +451,19 @@ input:focus {
   -o-transform: translatex(-250px);
   transform: translatex(-250px);
 }
-/* line 58, ../sass/partials/_social.scss */
+/* line 54, ../sass/partials/_social.scss */
 .comments header {
   display: table-cell;
   height: 50px;
   line-height: 50px;
 }
-/* line 64, ../sass/partials/_social.scss */
+/* line 60, ../sass/partials/_social.scss */
 .comments .comment-wrapper {
   margin-top: 50px;
   height: 100%;
   overflow-y: scroll;
 }
-/* line 69, ../sass/partials/_social.scss */
+/* line 65, ../sass/partials/_social.scss */
 .comments .comment-wrapper .icon-close {
   position: absolute;
   padding-left: 0.3em;
@@ -481,15 +477,15 @@ input:focus {
   -moz-transition: 0.3s;
   transition: 0.3s;
 }
-/* line 80, ../sass/partials/_social.scss */
+/* line 76, ../sass/partials/_social.scss */
 .comments .comment-wrapper .icon-close:hover {
   color: #ccc;
 }
-/* line 85, ../sass/partials/_social.scss */
+/* line 81, ../sass/partials/_social.scss */
 .comments .comment-wrapper form {
   width: 215px;
 }
-/* line 88, ../sass/partials/_social.scss */
+/* line 84, ../sass/partials/_social.scss */
 .comments .comment-wrapper form input {
   padding: 1em;
   border: none;
@@ -518,7 +514,7 @@ input:focus {
   color: white;
   font-weight: 200;
 }
-/* line 103, ../sass/partials/_social.scss */
+/* line 99, ../sass/partials/_social.scss */
 .comments .comment-wrapper .comment {
   margin: 0 auto;
   position: relative;
@@ -528,22 +524,22 @@ input:focus {
   padding-left: 55px;
   border-top: 1px solid #303030;
 }
-/* line 113, ../sass/partials/_social.scss */
+/* line 109, ../sass/partials/_social.scss */
 .comments .comment-wrapper .comment:last-of-type {
   border-bottom: 1px solid #303030;
 }
-/* line 117, ../sass/partials/_social.scss */
+/* line 113, ../sass/partials/_social.scss */
 .comments .comment-wrapper .comment a {
   color: white;
   font-weight: 800;
 }
-/* line 122, ../sass/partials/_social.scss */
+/* line 118, ../sass/partials/_social.scss */
 .comments .comment-wrapper .comment p.user-comment {
   margin: .6em 0;
   font-weight: 400;
   font-size: 13px;
 }
-/* line 128, ../sass/partials/_social.scss */
+/* line 124, ../sass/partials/_social.scss */
 .comments .comment-wrapper .comment img {
   position: absolute;
   left: 10px;
