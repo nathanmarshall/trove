@@ -5,11 +5,12 @@ aside {
 	width: 250px;
 	height: 700px;
 	position: fixed;
-	left: 0;
+	left: -250px;
 	top: 0;
 	bottom: 0;
 	height: 100%;
-	background: #0C0C0C;
+	background: #222;
+	@include transition(.5s);
 }
 
 //hamburger
@@ -80,5 +81,5 @@ ul.menu {
 
 //Slide out 
 .slide{
-		@include transform(translate3d(250px,0,0));
+		@include transform(translatex(250px));
 }

@@ -44,7 +44,7 @@ button.gem-button {
 		z-index: 9999;
 		height: 100%;
 		width: 250px;
-		background: #0C0C0C;
+		background: #222;
 		@include transition(.5s);
 
 		&.slide {
@@ -62,13 +62,29 @@ button.gem-button {
 			height: 100%;
 			overflow-y: scroll;
 
+			.icon-close {
+				position: absolute;
+				padding-left: 0.3em;
+				padding-bottom: 16px;
+				top: 18px;
+				text-align: right;
+				width: 100%;
+				border-bottom: 1px solid #555;
+				background: #222;
+				@include transition(0.3s);
+
+				&:hover {
+					color: #ccc;
+				}
+			}
+
 			form {
 				width: 215px;
 
 				input {
 					padding: 1em;
 					border: none;
-					background: #0C0C0C;
+					background: #222;
 					width: 100%;
 					color: white;
 					font-weight: 200;

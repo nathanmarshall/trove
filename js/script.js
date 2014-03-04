@@ -7,6 +7,7 @@ $(function(){
 	$('.hamburger').click(function(e){
     e.preventDefault();
 		$('.content-wrapper').toggleClass('slide');
+    $('aside').toggleClass('slide');
 	});
 
   //Hide Menu
@@ -80,7 +81,7 @@ $(function(){
 
     var dataPost = $(this).data('post');
     var url = "../trove/includes/functions.php";
-    var data = { commentPost: dataPost }
+    var data = { commentPost: dataPost };
 
     $.ajax({
       url: url,
@@ -94,6 +95,11 @@ $(function(){
         console.log('AJAX failed');
         }
     });
+  });
+
+  $('.icon-close').click(function(){
+    $('.comments').removeClass('slide');
+    $('.content-wrapper').removeClass('comment-slide');
   });
 
    //Following
@@ -126,4 +132,6 @@ $(function(){
       });
     }
   });
+
+
 });

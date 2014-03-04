@@ -8,8 +8,12 @@ html{
 body{
 	height: 100%;
 	font-family: 'Lato', Helvetica, sans-serif;
-	background: #181818;
+	background: #222;
 	color: white;
+
+	@media screen and (max-width:768px){
+		overflow-y: hidden;
+	}
 }
 
 h1{
