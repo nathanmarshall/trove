@@ -73,26 +73,59 @@ $(function(){
     });
   });
 
-  //comments
+  //view comments
+  var dataPost;
   $('.btn-comment').click(function(){
     $('.comments').toggleClass('slide');
     $('.content-wrapper').toggleClass('comment-slide');
 
-    var dataPost = $(this).data('post');
+    dataPost = $(this).data('post');
+    var data = { commentPost: dataPost };
+    renderComments(data);
+  });
+
+  function renderComments(data2) {
+
     var url = "../trove/includes/functions.php";
-    var data = { commentPost: dataPost }
+    var data2 = { commentPost: dataPost };
 
     $.ajax({
       url: url,
       type: 'POST',
       dataType: 'html',
-      data: data,
+      data: data2,
       success: function(data){
         $('.comment-list').html(data);
+        console.log('hello');
       },
       error: function(data){
         console.log('AJAX failed');
         }
+    });
+  }
+
+  //Post comment
+  $(document).on('submit', '.comment-form', function(event){
+    event.preventDefault();
+
+    var comment = $('.comment-form input').val();
+    var url = "../trove/social.php";
+    var data = {
+      postId: dataPost,
+      comment: comment
+    };
+
+    $.ajax({
+      url: url,
+      type: 'POST',
+      dataType: 'json',
+      data: data,
+      success: function(){
+        renderComments(dataPost);
+      },
+      error: function(){
+        console.log('AJAX failed');
+      }
     });
   });
 
