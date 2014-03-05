@@ -44,10 +44,11 @@ function post($userid,$db,$dbconfig,$sql) {
         $month = date("M", strtotime($data['postDate']));
         $day = date("jS", strtotime($data['postDate']));
         $year = date("Y", strtotime($data['postDate']));
-
-        echo '<span class="month">'.$month.'</span>';
-        echo '<span class="day">'.$day.'</span>';
+        echo '<div class="date">';
+        echo '<span class="month">'.$month.'&nbsp;</span>';
+        echo '<span class="day">'.$day.'&nbsp;</span>';
         echo '<span class="year">'.$year.'</span>';
+        echo '</div>';
         echo '<p class="post-text">'.$data['postText'].'<p>';
         echo '</div>';
       }
